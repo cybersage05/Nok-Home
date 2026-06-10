@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nok Home Hotel · โรงแรมบ้านนก — A quiet garden stay in Khao Yoi, Phetchaburi</title>
+<meta name="description" content="Nok Home Hotel (โรงแรมบ้านนก) — a small family-run garden hotel in Bang Khem, Khao Yoi, Phetchaburi. Quiet rooms from THB 583/night. ★4.4 on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&family=Noto+Serif+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   NOK HOME HOTEL · โรงแรมบ้านนก
+   palette: bamboo green · plumeria cream · sunset peach · pollen
+   ============================================================ */
+:root{
+  --night:#081a0f;
+  --pine:#11301f;
+  --moss:#1c4a2f;
+  --leaf:#3a7d52;
+  --sage:#9cc1a4;
+  --sage-dim:#6e8f78;
+  --cream:#faf5e9;
+  --paper:#f3ead7;
+  --peach:#f6c3a0;
+  --peach-deep:#ec9d6b;
+  --blush:#fbe3cf;
+  --pollen:#e9b824;
+  --ink:#1f2d25;
+  --f-display:'Fraunces','Noto Serif Thai',serif;
+  --f-body:'Karla','Noto Sans Thai',sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  font-family:var(--f-body);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.7;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.18;color:var(--pine)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+
+::selection{background:var(--pollen);color:var(--night)}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--moss);border-radius:99px;border:2px solid var(--cream)}
+
+/* film grain over everything */
+body::after{
+  content:"";position:fixed;inset:0;z-index:220;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- language cross-fade ---------- */
+[data-en]{transition:opacity .15s ease}
+body.lang-fading [data-en]{opacity:0}
+
+/* ---------- language toggle ---------- */
+.lang-toggle{
+  position:fixed;top:1.1rem;right:1.1rem;z-index:300;
+  display:flex;align-items:center;
+  background:rgba(250,245,233,.82);
+  border:1px solid rgba(17,48,31,.22);
+  border-radius:999px;padding:4px;
+  box-shadow:0 6px 24px rgba(8,26,15,.22);
+  backdrop-filter:blur(10px);
+}
+.lang-toggle .lang-ind{
+  position:absolute;top:4px;left:4px;width:58px;height:calc(100% - 8px);
+  background:var(--pine);border-radius:999px;
+  transition:transform .3s cubic-bezier(.6,0,.3,1);pointer-events:none;
+}
+.lang-toggle[data-active="th"] .lang-ind{transform:translateX(58px)}
+.lang-btn{
+  position:relative;z-index:1;width:58px;height:35px;border:0;background:none;cursor:pointer;
+  font-family:var(--f-body);font-size:.85rem;font-weight:700;color:var(--pine);
+  border-radius:999px;transition:color .3s ease;
+}
+.lang-toggle[data-active="en"] .lang-btn[data-lang="en"],
+.lang-toggle[data-active="th"] .lang-btn[data-lang="th"]{color:var(--cream)}
+
+/* ---------- scroll-progress bird (desktop) ---------- */
+.progress-wire{
+  position:fixed;top:14vh;bottom:14vh;right:26px;width:2px;z-index:120;
+  background:linear-gradient(to bottom,transparent,rgba(110,143,120,.4) 8%,rgba(110,143,120,.4) 92%,transparent);
+  pointer-events:none;
+}
+.progress-bird{
+  position:absolute;left:50%;top:0;width:22px;height:18px;color:var(--sage-dim);
+  transform:translate(-50%,0);will-change:transform;
+}
+@media (max-width:900px),(pointer:coarse){.progress-wire{display:none}}
+
+/* ============================================================
+   HERO — golden hour
+   ============================================================ */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  overflow:hidden;
+  background:linear-gradient(180deg,
+    #ffeed8 0%, #ffddb6 26%, #f8c294 44%, #e9c79c 56%,
+    #c9c897 68%, #9bbb8a 82%, #739c6c 100%);
+}
+
+/* sun */
+.sun{
+  position:absolute;left:50%;top:46%;z-index:1;
+  width:clamp(220px,34vw,360px);aspect-ratio:1;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,#fff6dd 0%,#ffe2ae 38%,rgba(255,214,160,.55) 58%,rgba(255,214,160,0) 72%);
+  pointer-events:none;
+}
+.sun::before{
+  content:"";position:absolute;inset:-55%;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,238,200,.5) 0%,rgba(255,238,200,0) 65%);
+}
+
+/* distant flying birds */
+.flock{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.fly{
+  position:absolute;left:-8vw;color:#2c4a36;opacity:.65;
+  animation:fly var(--fd,48s) linear var(--fdel,0s) infinite;
+  will-change:transform;
+}
+@keyframes fly{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(28vw,-26px)}
+  50%{transform:translate(56vw,6px)}
+  75%{transform:translate(84vw,-20px)}
+  100%{transform:translate(118vw,0)}
+}
+
+/* wire + perched birds */
+.wire-scene{position:absolute;top:0;left:0;right:0;z-index:3;pointer-events:none}
+.wire-scene svg{width:100%;height:auto}
+.perch{animation:hop var(--hd,9s) ease-in-out var(--hdel,0s) infinite;transform-origin:center bottom}
+@keyframes hop{
+  0%,87%,100%{transform:translateY(0)}
+  89%{transform:translateY(-8px)}
+  91%{transform:translateY(0)}
+  93.5%{transform:translateY(-4px)}
+  96%{transform:translateY(0)}
+}
+
+/* falling plumeria petals */
+.petals{position:absolute;inset:0;z-index:5;pointer-events:none;perspective:700px;overflow:hidden}
+.petal{
+  position:absolute;top:-80px;transform-style:preserve-3d;
+  animation:petal-fall var(--dur,15s) linear var(--delay,0s) infinite;
+  will-change:transform;
+}
+.petal svg{animation:petal-spin var(--spin,5s) linear infinite;transform-style:preserve-3d}
+@keyframes petal-fall{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(var(--drift,50px),114vh,0)}
+}
+@keyframes petal-spin{
+  from{transform:rotate3d(1,.75,.3,0deg)}
+  to{transform:rotate3d(1,.75,.3,360deg)}
+}
+
+/* bamboo silhouette layers */
+.bamboo{position:absolute;left:-2%;right:-2%;width:104%;bottom:-2px;pointer-events:none;will-change:transform}
+.bamboo svg{width:100%}
+.bamboo-far{z-index:1;color:#86a37e;opacity:.55;filter:blur(2px)}
+.bamboo-far svg{height:clamp(150px,30vh,300px)}
+.bamboo-mid{z-index:2;color:#3f6b4a;opacity:.85}
+.bamboo-mid svg{height:clamp(180px,36vh,340px)}
+.bamboo-near{z-index:4;color:var(--pine)}
+.bamboo-near svg{height:clamp(120px,26vh,250px)}
+
+/* hero copy */
+.hero-inner{position:relative;z-index:6;padding:6.5rem 1.25rem 11rem;max-width:54rem}
+.hero-thainame{
+  font-family:var(--f-display);font-size:clamp(1.1rem,2.8vw,1.5rem);
+  color:var(--pine);letter-spacing:.05em;opacity:.85;min-height:1.6em;
+}
+.hero h1{
+  font-size:clamp(2.9rem,10.5vw,6.2rem);font-weight:600;color:var(--night);
+  margin:.2rem 0 1.1rem;letter-spacing:-.01em;
+}
+.hero-tagline{
+  font-size:clamp(1.02rem,2.4vw,1.22rem);color:#3e4e42;max-width:36rem;
+  margin:0 auto 2.4rem;min-height:3.4em;
+}
+.hero-ctas{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.hero-rating{margin-top:1.7rem;font-size:.92rem;color:#4d5b4f;letter-spacing:.02em}
+.hero-rating .star{color:var(--pollen)}
+
+/* load-in choreography */
+.rise{opacity:0;transform:translateY(34px);animation:rise 1s cubic-bezier(.2,.7,.2,1) var(--r,0s) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll cue */
+.scroll-cue{
+  position:absolute;left:50%;bottom:1.6rem;z-index:6;transform:translateX(-50%);
+  font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,245,233,.85);
+  display:flex;flex-direction:column;align-items:center;gap:.45rem;text-decoration:none;
+}
+.scroll-cue .cue-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--cream);
+  animation:cue 2.2s ease-in-out infinite;
+}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(10px);opacity:.4}}
+
+/* buttons */
+.btn{
+  position:relative;display:inline-block;overflow:hidden;
+  font-family:var(--f-body);font-weight:700;font-size:1rem;
+  padding:.9rem 1.7rem;border-radius:999px;text-decoration:none;
+  border:2px solid transparent;cursor:pointer;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,background-color .3s ease;
+  will-change:transform;
+}
+.btn::after{ /* sheen sweep */
+  content:"";position:absolute;top:0;bottom:0;left:-80%;width:50%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);transition:left .6s ease;pointer-events:none;
+}
+.btn:hover::after{left:130%}
+.btn-primary{background:var(--pine);color:var(--cream);box-shadow:0 8px 26px rgba(8,26,15,.32)}
+.btn-primary:hover{background:var(--moss)}
+.btn-ghost{border-color:rgba(17,48,31,.45);color:var(--night);background:rgba(250,245,233,.42)}
+.btn-ghost:hover{background:rgba(250,245,233,.85)}
+.btn-pollen{background:var(--pollen);color:var(--night);box-shadow:0 8px 26px rgba(233,184,36,.3)}
+.btn-pollen:hover{background:#f4ca45}
+.btn-light{background:var(--cream);color:var(--night)}
+.btn-light:hover{background:#fff}
+.btn-outline-light{border-color:rgba(250,245,233,.45);color:var(--cream)}
+.btn-outline-light:hover{background:rgba(250,245,233,.12)}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee{
+  background:var(--pine);color:var(--cream);overflow:hidden;
+  border-top:1px solid rgba(250,245,233,.12);border-bottom:1px solid rgba(250,245,233,.12);
+  padding:.85rem 0;
+}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq-group{display:flex;align-items:center;gap:2.6rem;padding-right:2.6rem;white-space:nowrap}
+.mq-item{font-family:var(--f-display);font-style:italic;font-size:1.25rem;letter-spacing:.03em}
+.mq-item.thin{opacity:.55;font-style:normal;font-size:1.05rem}
+.mq-flower{width:18px;height:18px;color:var(--pollen);flex:none}
+
+/* ============================================================
+   SECTIONS — shared
+   ============================================================ */
+section{position:relative;padding:7rem 1.25rem;overflow:hidden}
+.wrap{max-width:68rem;margin:0 auto;position:relative;z-index:2}
+.eyebrow{
+  display:flex;align-items:center;gap:.7rem;
+  font-size:.78rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--leaf);margin-bottom:1.1rem;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor;flex:none}
+h2{font-size:clamp(2.1rem,5.6vw,3.4rem);margin-bottom:1.4rem;letter-spacing:-.01em}
+
+/* giant ghost Thai glyphs behind sections */
+.ghost{
+  position:absolute;z-index:1;pointer-events:none;user-select:none;
+  font-family:'Noto Serif Thai',serif;font-weight:600;line-height:1;
+  font-size:clamp(10rem,26vw,22rem);color:rgba(17,48,31,.05);
+}
+.contact .ghost{color:rgba(250,245,233,.045)}
+
+/* scroll reveals */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease var(--d,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.reveal-blur{opacity:0;filter:blur(8px);transform:translateY(16px);transition:opacity .9s ease var(--d,0s),filter .9s ease var(--d,0s),transform .9s ease var(--d,0s)}
+.reveal.in,.reveal-blur.in{opacity:1;transform:none;filter:none}
+
+/* ============================================================
+   01 · STORY
+   ============================================================ */
+.story{background:var(--cream)}
+.story .ghost{top:-2rem;right:-1rem}
+.story-grid{display:grid;gap:3.5rem;align-items:center}
+@media (min-width:880px){.story-grid{grid-template-columns:1.15fr .85fr}}
+.story-lead{font-size:1.13rem;color:#3c4b40;margin-bottom:1.3rem}
+html[lang="en"] .story-lead::first-letter{
+  font-family:var(--f-display);font-size:3.4em;font-weight:600;color:var(--leaf);
+  float:left;line-height:.82;padding:.06em .12em 0 0;
+}
+.story-quote{
+  font-family:var(--f-display);font-style:italic;font-size:clamp(1.25rem,2.6vw,1.6rem);
+  color:var(--moss);border-left:3px solid var(--pollen);padding-left:1.2rem;margin-top:2rem;
+}
+
+/* hanging weaver nest illustration */
+.nest-swing{transform-origin:150px 12px;animation:swing 7s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(2.4deg)}50%{transform:rotate(-2.4deg)}}
+
+/* photographs from the garden */
+.photo-frame{position:relative}
+.photo-cap{
+  font-family:var(--f-display);font-style:italic;font-size:.92rem;color:var(--leaf);
+  text-align:center;margin-top:1.1rem;
+}
+.arch-photo{
+  display:block;width:min(330px,76vw);aspect-ratio:677/911;margin:0 auto;
+  border-radius:999px 999px 22px 22px;overflow:hidden;
+  border:10px solid #fff;outline:1px solid rgba(17,48,31,.14);
+  box-shadow:0 28px 60px rgba(8,26,15,.2);background:var(--paper);
+}
+.arch-photo img,.pond-blob img{
+  width:100%;height:100%;object-fit:cover;transform:scale(1.02);
+  transition:transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.photo-frame:hover img{transform:scale(1.07)}
+.story-photo{display:block;text-align:center}
+.story-photo .arch-wrap{position:relative;display:inline-block}
+.nest-overlap{position:absolute;top:-26px;left:-52px;width:130px;z-index:2;overflow:visible}
+
+.garden-intro{display:grid;gap:2.6rem;align-items:center;margin-top:.6rem;margin-bottom:1rem}
+@media (min-width:880px){.garden-intro{grid-template-columns:1.05fr .8fr}}
+.garden-lede{font-size:1.12rem;color:#42513f;max-width:34rem}
+.pond-photo{display:block;margin:0 auto}
+.pond-blob{
+  display:block;aspect-ratio:746/782;max-width:400px;margin:0 auto;overflow:hidden;
+  border-radius:54% 46% 58% 42% / 48% 55% 45% 52%;
+  border:10px solid #fff;box-shadow:0 24px 54px rgba(31,45,37,.16);background:var(--cream);
+}
+
+/* stats row */
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3.4rem;
+  border-top:1px solid rgba(17,48,31,.14);padding-top:2.2rem;
+}
+.stat-num{
+  font-family:var(--f-display);font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--pine);
+  display:block;line-height:1.1;
+}
+.stat-num .unit{font-size:.45em;color:var(--leaf)}
+.stat-label{font-size:.86rem;color:#5a685c;letter-spacing:.04em}
+
+/* ============================================================
+   02 · GARDEN
+   ============================================================ */
+.garden{background:var(--paper)}
+.garden .ghost{bottom:-3rem;left:-1rem}
+.garden-grid{display:grid;gap:1.4rem;margin-top:3rem;grid-template-columns:1fr}
+@media (min-width:640px){.garden-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1020px){
+  .garden-grid{grid-template-columns:repeat(4,1fr)}
+  .gcard:nth-child(2),.gcard:nth-child(4){transform:translateY(2.2rem)}
+  .gcard:nth-child(2).in,.gcard:nth-child(4).in{transform:translateY(2.2rem)}
+}
+.gcard{
+  position:relative;background:var(--cream);border:1px solid rgba(17,48,31,.1);
+  border-radius:20px;overflow:hidden;
+  box-shadow:0 6px 22px rgba(31,45,37,.07);
+  transform-style:preserve-3d;will-change:transform;
+}
+.gcard-scene{background:linear-gradient(180deg,#fdf3e2,#f3ead7);border-bottom:1px solid rgba(17,48,31,.08)}
+.gcard-scene svg{width:100%;height:150px}
+.gcard-body{padding:1.3rem 1.3rem 1.6rem}
+.gcard h3{font-size:1.16rem;margin-bottom:.45rem;min-height:2.3em;display:flex;align-items:flex-end}
+.gcard p{font-size:.93rem;color:#4a584e}
+.gcard .glare{
+  position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .35s ease;
+  background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(255,248,225,.45),transparent 65%);
+}
+.gcard:hover .glare{opacity:1}
+
+/* in-card animations */
+.sway{transform-origin:50% 100%;animation:sway 6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+.drop-petal{animation:droppetal 4.5s ease-in 1s infinite}
+@keyframes droppetal{
+  0%{transform:translate(0,0) rotate(0);opacity:0}
+  12%{opacity:1}
+  85%{opacity:1}
+  100%{transform:translate(-26px,84px) rotate(160deg);opacity:0}
+}
+.ripple{transform-origin:center;animation:ripple 4s ease-out infinite}
+.ripple.r2{animation-delay:2s}
+@keyframes ripple{0%{transform:scale(.25);opacity:.8}100%{transform:scale(1.25);opacity:0}}
+
+/* ============================================================
+   03 · ROOMS — the stained-glass door
+   ============================================================ */
+.rooms{background:var(--cream);text-align:center}
+.rooms .ghost{top:0;left:-2rem}
+.door-scene{perspective:1300px;display:flex;justify-content:center;margin:3.2rem auto 1rem;position:relative}
+.door-frame{
+  position:relative;width:min(360px,86vw);
+  background:var(--pine);border-radius:999px 999px 14px 14px;
+  padding:10px;box-shadow:0 30px 70px rgba(8,26,15,.25);
+}
+.door-fan svg{width:100%;height:auto}
+.door-leaves{display:flex;margin-top:8px;position:relative}
+.door-inside{ /* the garden beyond, revealed when doors open */
+  position:absolute;inset:0;border-radius:0 0 6px 6px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 36%,#fff3d2 0%,#ffd9a4 26%,rgba(255,217,164,0) 55%),
+    linear-gradient(180deg,#ffe6c2 0%,#dccf9f 45%,#9fbd8b 78%,#6f9a68 100%);
+}
+.door-inside .inside-flower{position:absolute;width:26px;height:26px;opacity:.9}
+.leaf-door{
+  position:relative;z-index:2;flex:1;aspect-ratio:160/330;
+  display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(5,1fr);
+  gap:7px;padding:9px;background:#0d2718;border-radius:0 0 6px 6px;
+  transition:transform 1.9s cubic-bezier(.72,0,.18,1);
+  backface-visibility:hidden;
+}
+.leaf-l{transform-origin:left center;border-right:2px solid #0a2113}
+.leaf-r{transform-origin:right center;border-left:2px solid #0a2113}
+.open .leaf-l{transform:rotateY(-74deg)}
+.open .leaf-r{transform:rotateY(74deg)}
+.pane{
+  border-radius:3px;
+  background:linear-gradient(140deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,.05) 38%,rgba(0,0,0,.08) 100%),var(--c,#f6c3a0);
+  box-shadow:inset 0 0 0 1px rgba(8,26,15,.32);
+}
+.door-knob{position:absolute;top:52%;width:9px;height:9px;border-radius:50%;background:var(--pollen);z-index:3;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.leaf-l .door-knob{right:7px}
+.leaf-r .door-knob{left:7px}
+/* coloured light spilling onto the floor */
+.door-light{
+  position:absolute;left:50%;bottom:-46px;width:120%;height:74px;z-index:1;
+  transform:translateX(-50%) perspective(300px) rotateX(58deg);
+  background:linear-gradient(90deg,
+    rgba(233,184,36,.35),rgba(246,195,160,.4),rgba(250,245,233,.45),
+    rgba(156,193,164,.4),rgba(246,195,160,.4),rgba(233,184,36,.35));
+  filter:blur(14px);opacity:0;transition:opacity 1.6s ease .5s;border-radius:50%;
+}
+.open ~ .door-light, .door-scene.open .door-light{opacity:.85}
+.door-caption{
+  font-family:var(--f-display);font-style:italic;font-size:1.12rem;color:var(--leaf);
+  margin-top:3.4rem;
+}
+.rooms-copy{max-width:42rem;margin:1rem auto 0;font-size:1.08rem;color:#3c4b40}
+.amenities{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.8rem}
+.chip{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.88rem;font-weight:500;color:var(--moss);
+  border:1px solid rgba(17,48,31,.22);border-radius:999px;padding:.42rem 1rem;
+  background:rgba(250,245,233,.6);
+}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pollen);flex:none}
+.price-tag{
+  display:inline-block;margin-top:2.2rem;
+  font-family:var(--f-display);font-size:1.45rem;color:var(--pine);
+  background:var(--blush);border:1px solid rgba(233,184,36,.45);
+  padding:.75rem 1.9rem;border-radius:999px;
+}
+.price-tag .pollen{color:#a87f00;font-weight:600}
+
+/* ============================================================
+   04 · CONTACT — night garden
+   ============================================================ */
+.contact{
+  background:
+    radial-gradient(700px circle at 82% 12%,rgba(250,245,233,.08),transparent 60%),
+    linear-gradient(180deg,#0d2818 0%,var(--night) 70%);
+  color:var(--cream);padding-bottom:9rem;
+}
+.contact .ghost{bottom:-2rem;right:0}
+.contact h2{color:var(--cream)}
+.contact .eyebrow{color:var(--peach)}
+.moon{
+  position:absolute;top:5rem;right:8%;z-index:1;width:84px;height:84px;border-radius:50%;
+  background:radial-gradient(circle at 38% 36%,#fffdf4,#f1e6c8 70%);
+  box-shadow:0 0 60px 18px rgba(250,245,233,.14);
+}
+.fireflies{position:absolute;inset:0;z-index:1;pointer-events:none}
+.firefly{
+  position:absolute;width:5px;height:5px;border-radius:50%;
+  background:radial-gradient(circle,#ffe9a3 0%,rgba(255,233,163,.4) 55%,transparent 75%);
+  animation:ff-drift var(--ffd,9s) ease-in-out var(--ffdel,0s) infinite alternate,
+            ff-glow var(--ffg,3s) ease-in-out var(--ffdel,0s) infinite alternate;
+}
+@keyframes ff-drift{from{transform:translate(0,0)}to{transform:translate(var(--ffx,30px),var(--ffy,-24px))}}
+@keyframes ff-glow{from{opacity:.15}to{opacity:.95}}
+.contact-grid{display:grid;gap:3rem;margin-top:1rem}
+@media (min-width:820px){.contact-grid{grid-template-columns:1.05fr .95fr}}
+.contact p{color:#cfdccb}
+.contact-address{font-size:1.05rem;line-height:1.9;margin-bottom:1.4rem}
+.contact-meta{font-size:.93rem;color:#a7bba6;margin-top:1.1rem}
+.say-it{
+  margin-top:2.2rem;border:1px dashed rgba(250,245,233,.3);border-radius:14px;
+  padding:1.1rem 1.3rem;font-size:.95rem;color:#d8e3d2;
+}
+.say-it .nok{font-family:var(--f-display);font-style:italic;color:var(--pollen)}
+.contact-actions{display:flex;flex-direction:column;gap:.85rem}
+.contact-actions .btn{text-align:center}
+.contact-bamboo{position:absolute;left:0;right:0;bottom:-2px;color:#06140b;z-index:1;pointer-events:none}
+.contact-bamboo svg{width:100%;height:clamp(90px,16vh,160px)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  background:var(--night);color:#8aa18d;text-align:center;
+  padding:2.6rem 1.25rem;font-size:.88rem;
+  border-top:1px solid rgba(250,245,233,.07);
+}
+footer .foot-bird{width:26px;height:20px;margin:0 auto .6rem;color:var(--sage-dim)}
+footer .foot-name{font-family:var(--f-display);font-size:1.2rem;color:var(--cream);margin-bottom:.25rem}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  .petal,.petal svg,.perch,.fly,.nest-swing,.sway,.drop-petal,.ripple,
+  .firefly,.cue-dot,.mq-track,.rise{animation:none !important}
+  .rise{opacity:1;transform:none}
+  .petals,.flock{display:none}
+  .reveal,.reveal-blur{opacity:1;transform:none;filter:none;transition:none}
+  .leaf-door,.door-light,.btn,.gcard,.arch-photo img,.pond-blob img{transition:none}
+  .bamboo{transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- language toggle -->
+<div class="lang-toggle" data-active="en" role="group" aria-label="Language / ภาษา">
+  <span class="lang-ind" aria-hidden="true"></span>
+  <button class="lang-btn" data-lang="en" type="button">EN</button>
+  <button class="lang-btn" data-lang="th" type="button">ไทย</button>
+</div>
+
+<!-- scroll-progress bird on a vertical wire -->
+<div class="progress-wire" aria-hidden="true">
+  <svg class="progress-bird" viewBox="0 0 26 20" fill="currentColor">
+    <ellipse cx="11" cy="10" rx="9" ry="6"/><circle cx="19" cy="5" r="4"/>
+    <path d="M22.6 4.2 L26 5.2 L22.7 6.4 Z"/>
+    <path d="M3 9 L-4 4 L-1 10 L-5 14 L3 12 Z" transform="translate(4 0)"/>
+  </svg>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="sun" aria-hidden="true"></div>
+
+  <!-- distant birds crossing the sky -->
+  <div class="flock" aria-hidden="true">
+    <svg class="fly" style="top:13%;--fd:52s;--fdel:-12s" width="26" height="12" viewBox="0 0 26 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 8 Q6.5 1 13 7 Q19.5 1 25 8"/></svg>
+    <svg class="fly" style="top:20%;--fd:64s;--fdel:-40s" width="20" height="10" viewBox="0 0 26 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 8 Q6.5 1 13 7 Q19.5 1 25 8"/></svg>
+    <svg class="fly" style="top:9%;--fd:75s;--fdel:-25s" width="16" height="8" viewBox="0 0 26 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 8 Q6.5 1 13 7 Q19.5 1 25 8"/></svg>
+  </div>
+
+  <!-- sagging wire with perched birds -->
+  <div class="wire-scene" aria-hidden="true">
+    <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin slice">
+      <path d="M-20 18 Q360 92 720 60 Q1080 30 1460 84" fill="none" stroke="#23402c" stroke-width="2.6" opacity=".7"/>
+      <g class="perch" style="--hd:9s" transform="translate(388 60)">
+        <ellipse cx="11" cy="9" rx="10" ry="6.5" fill="#16331f"/><circle cx="20.5" cy="3.5" r="4.6" fill="#16331f"/>
+        <path d="M24.6 2.6 L31 4.2 L24.8 5.8 Z" fill="#16331f"/>
+        <path d="M2 8 L-9 2 L-5 9.5 L-10 14 L1 11.5 Z" fill="#16331f"/>
+        <line x1="8" y1="15" x2="8" y2="20" stroke="#16331f" stroke-width="1.6"/>
+        <line x1="13" y1="15" x2="13" y2="20" stroke="#16331f" stroke-width="1.6"/>
+      </g>
+      <g class="perch" style="--hd:12s;--hdel:3s" transform="translate(960 36) scale(.78)">
+        <ellipse cx="11" cy="9" rx="10" ry="6.5" fill="#16331f"/><circle cx="20.5" cy="3.5" r="4.6" fill="#16331f"/>
+        <path d="M24.6 2.6 L31 4.2 L24.8 5.8 Z" fill="#16331f"/>
+        <path d="M2 8 L-9 2 L-5 9.5 L-10 14 L1 11.5 Z" fill="#16331f"/>
+        <line x1="8" y1="15" x2="8" y2="20" stroke="#16331f" stroke-width="1.6"/>
+        <line x1="13" y1="15" x2="13" y2="20" stroke="#16331f" stroke-width="1.6"/>
+      </g>
+      <g class="perch" style="--hd:10.5s;--hdel:6s" transform="translate(1130 36) scale(-.62 .62)">
+        <ellipse cx="11" cy="9" rx="10" ry="6.5" fill="#16331f"/><circle cx="20.5" cy="3.5" r="4.6" fill="#16331f"/>
+        <path d="M24.6 2.6 L31 4.2 L24.8 5.8 Z" fill="#16331f"/>
+        <path d="M2 8 L-9 2 L-5 9.5 L-10 14 L1 11.5 Z" fill="#16331f"/>
+        <line x1="8" y1="15" x2="8" y2="20" stroke="#16331f" stroke-width="1.6"/>
+        <line x1="13" y1="15" x2="13" y2="20" stroke="#16331f" stroke-width="1.6"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- petals (generated by JS) -->
+  <div class="petals" aria-hidden="true"></div>
+
+  <!-- bamboo layers, far → near -->
+  <div class="bamboo bamboo-far" aria-hidden="true" data-parallax="0.3">
+    <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" fill="currentColor">
+      <g transform="translate(120 10) rotate(2 0 300)"><rect width="10" height="300" rx="5"/><ellipse cx="-22" cy="50" rx="30" ry="6" transform="rotate(-20 -22 50)"/><ellipse cx="32" cy="92" rx="28" ry="6" transform="rotate(16 32 92)"/></g>
+      <g transform="translate(420 30) rotate(-2 0 300)"><rect width="9" height="280" rx="4"/><ellipse cx="26" cy="60" rx="26" ry="6" transform="rotate(18 26 60)"/></g>
+      <g transform="translate(700 0) rotate(1.5 0 300)"><rect width="11" height="300" rx="5"/><ellipse cx="-24" cy="44" rx="30" ry="6" transform="rotate(-18 -24 44)"/><ellipse cx="30" cy="100" rx="26" ry="6" transform="rotate(14 30 100)"/></g>
+      <g transform="translate(1000 24) rotate(-2.5 0 300)"><rect width="9" height="280" rx="4"/><ellipse cx="-22" cy="70" rx="26" ry="6" transform="rotate(-22 -22 70)"/></g>
+      <g transform="translate(1280 8) rotate(2 0 300)"><rect width="10" height="296" rx="5"/><ellipse cx="28" cy="52" rx="28" ry="6" transform="rotate(20 28 52)"/></g>
+    </svg>
+  </div>
+  <div class="bamboo bamboo-mid" aria-hidden="true" data-parallax="0.18">
+    <svg viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice" fill="currentColor">
+      <g transform="translate(40 0) rotate(3 0 340)"><rect width="14" height="340" rx="7"/><ellipse cx="-30" cy="46" rx="38" ry="8" transform="rotate(-24 -30 46)"/><ellipse cx="44" cy="86" rx="40" ry="8" transform="rotate(18 44 86)"/><ellipse cx="-24" cy="140" rx="32" ry="7" transform="rotate(-14 -24 140)"/></g>
+      <g transform="translate(330 26) rotate(-2 0 340)"><rect width="12" height="316" rx="6"/><ellipse cx="38" cy="50" rx="36" ry="8" transform="rotate(20 38 50)"/><ellipse cx="-26" cy="104" rx="32" ry="7" transform="rotate(-22 -26 104)"/></g>
+      <g transform="translate(600 -8) rotate(2 0 340)"><rect width="15" height="350" rx="7"/><ellipse cx="-32" cy="60" rx="40" ry="8" transform="rotate(-18 -32 60)"/><ellipse cx="48" cy="32" rx="38" ry="8" transform="rotate(24 48 32)"/><ellipse cx="40" cy="128" rx="34" ry="7" transform="rotate(12 40 128)"/></g>
+      <g transform="translate(890 34) rotate(-3 0 340)"><rect width="12" height="308" rx="6"/><ellipse cx="34" cy="64" rx="34" ry="7" transform="rotate(18 34 64)"/><ellipse cx="-24" cy="126" rx="30" ry="6" transform="rotate(-20 -24 126)"/></g>
+      <g transform="translate(1150 0) rotate(2.5 0 340)"><rect width="14" height="340" rx="7"/><ellipse cx="-30" cy="48" rx="38" ry="8" transform="rotate(-22 -30 48)"/><ellipse cx="44" cy="96" rx="36" ry="8" transform="rotate(16 44 96)"/></g>
+      <g transform="translate(1380 22) rotate(-2 0 340)"><rect width="13" height="320" rx="6"/><ellipse cx="-28" cy="70" rx="34" ry="7" transform="rotate(-18 -28 70)"/></g>
+    </svg>
+  </div>
+  <div class="bamboo bamboo-near" aria-hidden="true" data-parallax="0.08">
+    <svg viewBox="0 0 1440 250" preserveAspectRatio="xMidYMax slice" fill="currentColor">
+      <g transform="translate(-30 40) rotate(5 0 250)"><rect width="22" height="240" rx="11"/><ellipse cx="62" cy="36" rx="54" ry="12" transform="rotate(24 62 36)"/><ellipse cx="-36" cy="90" rx="48" ry="11" transform="rotate(-18 -36 90)"/></g>
+      <g transform="translate(140 90) rotate(-4 0 250)"><rect width="18" height="190" rx="9"/><ellipse cx="-40" cy="40" rx="48" ry="11" transform="rotate(-26 -40 40)"/><ellipse cx="54" cy="84" rx="46" ry="10" transform="rotate(14 54 84)"/></g>
+      <g transform="translate(1240 80) rotate(4 0 250)"><rect width="19" height="200" rx="9"/><ellipse cx="-42" cy="44" rx="50" ry="11" transform="rotate(-20 -42 44)"/><ellipse cx="56" cy="90" rx="46" ry="10" transform="rotate(18 56 90)"/></g>
+      <g transform="translate(1410 50) rotate(-5 0 250)"><rect width="22" height="230" rx="11"/><ellipse cx="-54" cy="50" rx="52" ry="12" transform="rotate(-24 -54 50)"/></g>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <p class="hero-thainame rise" style="--r:.15s" data-en="โรงแรมบ้านนก" data-th="Nok Home Hotel">โรงแรมบ้านนก</p>
+    <h1 class="rise" style="--r:.3s" data-en="Nok Home Hotel" data-th="โรงแรมบ้านนก">Nok Home Hotel</h1>
+    <p class="hero-tagline rise" style="--r:.5s"
+       data-en="A quiet garden stay in Khao Yoi, Phetchaburi — where the birds were here first, and the loudest thing is the morning."
+       data-th="ที่พักสวนอันเงียบสงบในเขาย้อย เพชรบุรี — ที่ซึ่งนกอยู่มาก่อนเรา และสิ่งที่ดังที่สุดคือยามเช้า">
+       A quiet garden stay in Khao Yoi, Phetchaburi — where the birds were here first, and the loudest thing is the morning.</p>
+    <div class="hero-ctas rise" style="--r:.65s">
+      <a class="btn btn-primary" href="#contact"
+         data-en="Book a night · from ฿583" data-th="จองห้องพัก · เริ่มต้น ฿583">Book a night · from ฿583</a>
+      <a class="btn btn-ghost" href="https://maps.app.goo.gl/HiDQRdYoeHQW4bbL6" target="_blank" rel="noopener"
+         data-en="Get directions" data-th="ดูเส้นทาง">Get directions</a>
+    </div>
+    <p class="hero-rating rise" style="--r:.8s"><span class="star">★</span> 4.4 ·
+      <span data-en="100+ Google reviews" data-th="รีวิวบน Google กว่า 100 รายการ">100+ Google reviews</span></p>
+  </div>
+
+  <a class="scroll-cue rise" style="--r:1.1s" href="#story">
+    <span data-en="scroll slowly" data-th="ค่อย ๆ เลื่อน">scroll slowly</span>
+    <span class="cue-dot" aria-hidden="true"></span>
+  </a>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <div class="mq-group">
+      <span class="mq-item">โรงแรมบ้านนก</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+      <span class="mq-item">Nok Home Hotel</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+      <span class="mq-item thin">นก = bird · บ้าน = home</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+      <span class="mq-item thin">Bang Khem · Khao Yoi · Phetchaburi</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+    </div>
+    <div class="mq-group">
+      <span class="mq-item">โรงแรมบ้านนก</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+      <span class="mq-item">Nok Home Hotel</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+      <span class="mq-item thin">นก = bird · บ้าน = home</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+      <span class="mq-item thin">Bang Khem · Khao Yoi · Phetchaburi</span>
+      <svg class="mq-flower" viewBox="0 0 40 40"><g fill="currentColor"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g></svg>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ 01 · STORY ============ -->
+<section class="story" id="story">
+  <span class="ghost" aria-hidden="true">นก</span>
+  <div class="wrap">
+    <span class="eyebrow reveal" data-en="01 — Our story" data-th="01 — เรื่องราวของเรา">01 — Our story</span>
+    <div class="story-grid">
+      <div>
+        <h2 class="reveal-blur" data-en="The birds were here first" data-th="นกอยู่ที่นี่มาก่อนเรา">The birds were here first</h2>
+        <p class="story-lead reveal" style="--d:.1s"
+           data-en="In Thai, nok (นก) means bird — and the name is honest. Weaver birds knot their hanging nests in our old trees, sparrows line the wires at dusk, and every morning begins with song. Our small family-run hotel grew quietly around them, in a big garden of old plumeria trees, just a minute off the main road in Bang Khem, Khao Yoi."
+           data-th="ชื่อของที่นี่ตรงตามจริง — “นก” อยู่ที่นี่มาก่อนเราเสียอีก นกกระจาบถักรังห้อยอยู่บนต้นไม้เก่าแก่ นกตัวเล็ก ๆ เรียงแถวบนสายไฟยามเย็น และทุกเช้าเริ่มต้นด้วยเสียงเพลงของพวกเขา โรงแรมเล็ก ๆ ที่ครอบครัวเราดูแลเองค่อย ๆ เติบโตขึ้นอย่างเงียบ ๆ ท่ามกลางนกเหล่านี้ ในสวนกว้างของต้นลีลาวดีเก่าแก่ ห่างจากถนนใหญ่เพียงนาทีเดียวที่บางเค็ม เขาย้อยค่ะ">
+           In Thai, nok (นก) means bird — and the name is honest. Weaver birds knot their hanging nests in our old trees, sparrows line the wires at dusk, and every morning begins with song. Our small family-run hotel grew quietly around them, in a big garden of old plumeria trees, just a minute off the main road in Bang Khem, Khao Yoi.</p>
+        <p class="reveal" style="--d:.2s"
+           data-en="Nothing here is in a hurry — not the lotus opening in the stone basins, not the petals drifting down from the frangipani, and hopefully not you."
+           data-th="ที่นี่ไม่มีอะไรรีบร้อน — ทั้งดอกบัวที่ค่อย ๆ บานในอ่างหิน ทั้งกลีบลีลาวดีที่ค่อย ๆ ร่วงหล่น และหวังว่าคุณก็เช่นกัน">
+           Nothing here is in a hurry — not the lotus opening in the stone basins, not the petals drifting down from the frangipani, and hopefully not you.</p>
+        <p class="story-quote reveal" style="--d:.3s"
+           data-en="The real review is the birdsong at sunrise."
+           data-th="รีวิวที่แท้จริง คือเสียงนกร้องยามรุ่งสาง">
+           The real review is the birdsong at sunrise.</p>
+      </div>
+
+      <!-- the old plumeria at golden hour, weaver nest swinging over the frame -->
+      <figure class="photo-frame story-photo reveal-blur" style="--d:.15s">
+        <span class="arch-wrap">
+          <span class="arch-photo">
+            <img src="Images/plumeria-dusk.jpg" width="677" height="911" loading="lazy"
+                 alt="The old plumeria tree in our garden against a golden-hour sky">
+          </span>
+          <svg class="nest-overlap" viewBox="0 0 130 150" fill="none" aria-hidden="true">
+            <path d="M0 8 Q40 24 70 14 Q100 6 134 16" stroke="#3a7d52" stroke-width="5" stroke-linecap="round"/>
+            <g class="nest-swing" style="transform-origin:66px 14px">
+              <line x1="66" y1="14" x2="66" y2="30" stroke="#5b4a33" stroke-width="3"/>
+              <path d="M66 30 C44 36 38 68 42 94 C45 114 54 128 66 130 C78 128 87 114 90 94 C94 68 88 36 66 30 Z" fill="#8a6d46" stroke="#6e5536" stroke-width="3"/>
+              <path d="M48 58 C60 51 74 51 84 59 M46 80 C60 72 74 72 88 81 M50 102 C62 95 72 95 82 103" stroke="#6e5536" stroke-width="2.4" stroke-linecap="round"/>
+              <ellipse cx="66" cy="104" rx="12" ry="14" fill="#3d2f1e"/>
+              <g transform="translate(58 97)">
+                <ellipse cx="6" cy="6" rx="6" ry="4.4" fill="#e9b824"/>
+                <circle cx="11.5" cy="3" r="2.8" fill="#e9b824"/>
+                <path d="M14 2.4 L17.6 3.3 L14.1 4.4 Z" fill="#1f2d25"/>
+              </g>
+            </g>
+          </svg>
+        </span>
+        <figcaption class="photo-cap"
+          data-en="Taken at our gate — the old plumeria at golden hour."
+          data-th="ถ่ายหน้าบ้านของเราจริง ๆ — ลีลาวดีต้นเก่ายามแสงทอง">
+          Taken at our gate — the old plumeria at golden hour.</figcaption>
+      </figure>
+    </div>
+
+    <!-- counting stats -->
+    <div class="stats reveal" id="stats">
+      <div class="stat">
+        <span class="stat-num"><span data-count="4.4" data-dec="1">0</span> <span class="unit">★</span></span>
+        <span class="stat-label" data-en="Google rating" data-th="คะแนนบน Google">Google rating</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num"><span data-count="100">0</span><span class="unit">+</span></span>
+        <span class="stat-label" data-en="guest reviews" data-th="รีวิวจากผู้เข้าพัก">guest reviews</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num"><span data-count="1">0</span> <span class="unit" data-en="min" data-th="นาที">min</span></span>
+        <span class="stat-label" data-en="off the main road" data-th="จากถนนใหญ่">off the main road</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · GARDEN ============ -->
+<section class="garden" id="garden">
+  <span class="ghost" aria-hidden="true">สวน</span>
+  <div class="wrap">
+    <span class="eyebrow reveal" data-en="02 — The garden" data-th="02 — สวนของเรา">02 — The garden</span>
+    <h2 class="reveal-blur" data-en="Four reasons to walk slowly" data-th="สี่เหตุผลให้เดินช้าลง">Four reasons to walk slowly</h2>
+
+    <div class="garden-intro">
+      <p class="garden-lede reveal"
+         data-en="The garden is the whole point of staying here. Old trees, still water, busy birds — give it ten slow minutes and it gives you back the rest of the day."
+         data-th="สวนคือหัวใจของการมาพักที่นี่ ต้นไม้เก่า น้ำนิ่ง และนกที่ขยันส่งเสียง — ให้เวลาสวนสักสิบนาทีช้า ๆ แล้วสวนจะคืนความสบายใจให้คุณไปทั้งวัน">
+         The garden is the whole point of staying here. Old trees, still water, busy birds — give it ten slow minutes and it gives you back the rest of the day.</p>
+      <figure class="photo-frame pond-photo reveal-blur" style="--d:.12s">
+        <span class="pond-blob">
+          <img src="Images/garden-lilies.jpg" width="746" height="782" loading="lazy"
+               alt="Water lilies blooming in a stone basin beside the garden path">
+        </span>
+        <figcaption class="photo-cap"
+          data-en="The water-lily basin along the path — something is always blooming."
+          data-th="อ่างบัวสายริมทางเดิน — มีดอกไม้บานอยู่เสมอ">
+          The water-lily basin along the path — something is always blooming.</figcaption>
+      </figure>
+    </div>
+
+    <div class="garden-grid">
+
+      <!-- bamboo tunnel -->
+      <article class="gcard reveal" style="--d:0s" data-tilt>
+        <div class="glare"></div>
+        <div class="gcard-scene" aria-hidden="true">
+          <svg viewBox="0 0 220 150" fill="none" stroke-linecap="round">
+            <g class="sway">
+              <path d="M28 150 C28 64 66 34 110 34 C154 34 192 64 192 150" stroke="#3a7d52" stroke-width="5"/>
+              <path d="M48 150 C48 80 76 54 110 54 C144 54 172 80 172 150" stroke="#1c4a2f" stroke-width="4"/>
+              <path d="M66 150 C66 94 84 72 110 72 C136 72 154 94 154 150" stroke="#3a7d52" stroke-width="3"/>
+              <ellipse cx="36" cy="58" rx="16" ry="4" fill="#3a7d52" transform="rotate(-28 36 58)"/>
+              <ellipse cx="186" cy="62" rx="16" ry="4" fill="#3a7d52" transform="rotate(28 186 62)"/>
+              <ellipse cx="58" cy="84" rx="13" ry="3.5" fill="#1c4a2f" transform="rotate(-20 58 84)"/>
+              <ellipse cx="164" cy="88" rx="13" ry="3.5" fill="#1c4a2f" transform="rotate(20 164 88)"/>
+            </g>
+            <circle cx="110" cy="112" r="4" fill="#e9b824" opacity=".55"/>
+            <circle cx="98" cy="128" r="2.6" fill="#e9b824" opacity=".4"/>
+            <circle cx="124" cy="132" r="2" fill="#e9b824" opacity=".35"/>
+            <line x1="14" y1="150" x2="206" y2="150" stroke="#1c4a2f" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="gcard-body">
+          <h3 data-en="The bamboo tunnel" data-th="อุโมงค์ไผ่">The bamboo tunnel</h3>
+          <p data-en="A living tunnel of bamboo arches over the path — green light, cool shade, and the soft creak of stems when the wind moves."
+             data-th="อุโมงค์ไผ่เขียวครึ้มโค้งคลุมทางเดิน แสงร่มรื่น ลมเย็น และเสียงลำไผ่เสียดสีเบา ๆ ยามลมพัด">
+             A living tunnel of bamboo arches over the path — green light, cool shade, and the soft creak of stems when the wind moves.</p>
+        </div>
+      </article>
+
+      <!-- plumeria -->
+      <article class="gcard reveal" style="--d:.1s" data-tilt>
+        <div class="glare"></div>
+        <div class="gcard-scene" aria-hidden="true">
+          <svg viewBox="0 0 220 150" fill="none">
+            <path d="M224 150 C180 122 158 96 124 74 M158 100 C150 84 148 70 152 56 M138 84 C124 78 112 78 100 84" stroke="#1c4a2f" stroke-width="7" stroke-linecap="round"/>
+            <g>
+              <g transform="translate(124 70)">
+                <ellipse cx="0" cy="-11" rx="6" ry="10" fill="#fdfaf0"/><ellipse cx="10.5" cy="-3.4" rx="6" ry="10" fill="#fdfaf0" transform="rotate(72 0 0)"/><ellipse cx="6.5" cy="8.9" rx="6" ry="10" fill="#fdfaf0" transform="rotate(144 0 0)"/><ellipse cx="-6.5" cy="8.9" rx="6" ry="10" fill="#fdfaf0" transform="rotate(216 0 0)"/><ellipse cx="-10.5" cy="-3.4" rx="6" ry="10" fill="#fdfaf0" transform="rotate(288 0 0)"/>
+                <circle r="4" fill="#e9b824"/>
+              </g>
+              <g transform="translate(152 52) scale(.78)">
+                <ellipse cx="0" cy="-11" rx="6" ry="10" fill="#fdfaf0"/><ellipse cx="10.5" cy="-3.4" rx="6" ry="10" fill="#fdfaf0" transform="rotate(72 0 0)"/><ellipse cx="6.5" cy="8.9" rx="6" ry="10" fill="#fdfaf0" transform="rotate(144 0 0)"/><ellipse cx="-6.5" cy="8.9" rx="6" ry="10" fill="#fdfaf0" transform="rotate(216 0 0)"/><ellipse cx="-10.5" cy="-3.4" rx="6" ry="10" fill="#fdfaf0" transform="rotate(288 0 0)"/>
+                <circle r="4" fill="#e9b824"/>
+              </g>
+              <g transform="translate(96 86) scale(.6)">
+                <ellipse cx="0" cy="-11" rx="6" ry="10" fill="#fdfaf0"/><ellipse cx="10.5" cy="-3.4" rx="6" ry="10" fill="#fdfaf0" transform="rotate(72 0 0)"/><ellipse cx="6.5" cy="8.9" rx="6" ry="10" fill="#fdfaf0" transform="rotate(144 0 0)"/><ellipse cx="-6.5" cy="8.9" rx="6" ry="10" fill="#fdfaf0" transform="rotate(216 0 0)"/><ellipse cx="-10.5" cy="-3.4" rx="6" ry="10" fill="#fdfaf0" transform="rotate(288 0 0)"/>
+                <circle r="4" fill="#e9b824"/>
+              </g>
+            </g>
+            <ellipse class="drop-petal" cx="92" cy="52" rx="4.5" ry="8" fill="#fdfaf0" opacity="0"/>
+            <ellipse cx="56" cy="142" rx="5" ry="9" fill="#fdfaf0" transform="rotate(64 56 142)"/>
+            <ellipse cx="150" cy="144" rx="4.4" ry="8" fill="#fdfaf0" transform="rotate(-40 150 144)"/>
+          </svg>
+        </div>
+        <div class="gcard-body">
+          <h3 data-en="Old plumeria trees" data-th="ต้นลีลาวดีเก่าแก่">Old plumeria trees</h3>
+          <p data-en="Old frangipani trees scatter white petals across the grass. They were here long before us — and smell sweetest at dusk."
+             data-th="ต้นลีลาวดีเก่าแก่โปรยกลีบขาวทั่วผืนหญ้า ต้นไม้เหล่านี้อยู่มาก่อนเรานานนัก และส่งกลิ่นหอมที่สุดยามพลบค่ำ">
+             Old frangipani trees scatter white petals across the grass. They were here long before us — and smell sweetest at dusk.</p>
+        </div>
+      </article>
+
+      <!-- lotus basins -->
+      <article class="gcard reveal" style="--d:.2s" data-tilt>
+        <div class="glare"></div>
+        <div class="gcard-scene" aria-hidden="true">
+          <svg viewBox="0 0 220 150" fill="none">
+            <path d="M42 78 C52 122 78 138 110 138 C142 138 168 122 178 78" fill="#7a8a72"/>
+            <path d="M42 78 C52 122 78 138 110 138 C142 138 168 122 178 78" stroke="#5d6b56" stroke-width="3"/>
+            <ellipse cx="110" cy="78" rx="68" ry="13" fill="#2c5a40"/>
+            <ellipse cx="110" cy="76" rx="62" ry="10" fill="#f6c3a0" opacity=".75"/>
+            <g class="ripple"><ellipse cx="110" cy="76" rx="34" ry="6" stroke="#faf5e9" stroke-width="1.6"/></g>
+            <g class="ripple r2"><ellipse cx="110" cy="76" rx="34" ry="6" stroke="#faf5e9" stroke-width="1.6"/></g>
+            <ellipse cx="74" cy="76" rx="16" ry="5" fill="#3a7d52"/>
+            <ellipse cx="148" cy="78" rx="14" ry="4.4" fill="#3a7d52"/>
+            <g transform="translate(110 56)">
+              <path d="M0 18 C-12 12 -16 -2 -8 -12 C-5 -2 -2 4 0 18 Z" fill="#f3b29a"/>
+              <path d="M0 18 C12 12 16 -2 8 -12 C5 -2 2 4 0 18 Z" fill="#f3b29a"/>
+              <path d="M0 18 C-7 8 -7 -8 0 -16 C7 -8 7 8 0 18 Z" fill="#fbd9c4"/>
+              <circle cy="14" r="3.4" fill="#e9b824"/>
+            </g>
+            <path d="M134 66 C134 56 138 50 142 48 C146 52 146 60 140 66 Z" fill="#f3b29a"/>
+          </svg>
+        </div>
+        <div class="gcard-body">
+          <h3 data-en="Lotus basins" data-th="อ่างบัว">Lotus basins</h3>
+          <p data-en="Lotus and water lilies bloom in stone basins between the trees — small, still ponds you find as you wander."
+             data-th="บัวหลวงและบัวสายผลิบานในอ่างหินระหว่างแมกไม้ เป็นสระน้ำนิ่งเล็ก ๆ ที่คุณจะค่อย ๆ พบระหว่างเดินเล่น">
+             Lotus and water lilies bloom in stone basins between the trees — small, still ponds you find as you wander.</p>
+        </div>
+      </article>
+
+      <!-- resident birds -->
+      <article class="gcard reveal" style="--d:.3s" data-tilt>
+        <div class="glare"></div>
+        <div class="gcard-scene" aria-hidden="true">
+          <svg viewBox="0 0 220 150" fill="none">
+            <path d="M0 36 Q110 64 220 28" stroke="#1c4a2f" stroke-width="2.4"/>
+            <g class="perch" style="--hd:7s" transform="translate(96 38)">
+              <ellipse cx="9" cy="8" rx="8.5" ry="5.5" fill="#11301f"/><circle cx="17" cy="3.4" r="3.8" fill="#11301f"/>
+              <path d="M20.4 2.6 L25.6 4 L20.6 5.4 Z" fill="#11301f"/>
+              <path d="M2 7 L-7 2.4 L-3.8 8.2 L-8 12 L1 10 Z" fill="#11301f"/>
+              <line x1="6.5" y1="13" x2="6.5" y2="17.5" stroke="#11301f" stroke-width="1.4"/>
+              <line x1="11" y1="13" x2="11" y2="17.5" stroke="#11301f" stroke-width="1.4"/>
+            </g>
+            <path d="M226 96 C198 84 184 70 168 50" stroke="#1c4a2f" stroke-width="6" stroke-linecap="round"/>
+            <g class="nest-swing" style="transform-origin:178px 62px;animation-duration:5.5s">
+              <line x1="178" y1="62" x2="178" y2="74" stroke="#5b4a33" stroke-width="2.4"/>
+              <path d="M178 74 C160 80 156 104 160 122 C163 136 170 144 178 146 C186 144 193 136 196 122 C200 104 196 80 178 74 Z" fill="#8a6d46" stroke="#6e5536" stroke-width="2.4"/>
+              <path d="M165 96 C174 91 184 91 192 97 M163 114 C174 108 184 108 194 115" stroke="#6e5536" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="178" cy="124" rx="10" ry="12" fill="#3d2f1e"/>
+            </g>
+            <path d="M30 120 Q36 112 44 118 Q50 112 58 119" stroke="#11301f" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            <path d="M58 134 Q63 128 69 132 Q74 128 80 134" stroke="#11301f" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+          </svg>
+        </div>
+        <div class="gcard-body">
+          <h3 data-en="The resident birds" data-th="นกประจำบ้าน">The resident birds</h3>
+          <p data-en="Weaver birds hang their woven nests in our trees, and every evening the wires fill up with little singing silhouettes."
+             data-th="นกกระจาบแขวนรังที่ถักเองไว้บนต้นไม้ของเรา และทุกเย็นสายไฟก็เต็มไปด้วยเงานกตัวเล็ก ๆ ส่งเสียงร้องเพลง">
+             Weaver birds hang their woven nests in our trees, and every evening the wires fill up with little singing silhouettes.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · ROOMS ============ -->
+<section class="rooms" id="rooms">
+  <span class="ghost" aria-hidden="true">ห้อง</span>
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center" data-en="03 — Our rooms" data-th="03 — ห้องพักของเรา">03 — Our rooms</span>
+    <h2 class="reveal-blur" data-en="Behind the stained-glass door" data-th="หลังบานประตูกระจกสี">Behind the stained-glass door</h2>
+
+    <!-- the door opens as you arrive -->
+    <div class="door-scene reveal" id="door" aria-hidden="true">
+      <div class="door-frame">
+        <div class="door-fan">
+          <svg viewBox="0 0 340 164">
+            <path d="M170 160 L20 160 A150 150 0 0 1 34.8 94.9 Z" fill="#e9b824"/>
+            <path d="M170 160 L34.8 94.9 A150 150 0 0 1 76.5 42.7 Z" fill="#f6c3a0"/>
+            <path d="M170 160 L76.5 42.7 A150 150 0 0 1 136.6 13.8 Z" fill="#faf5e9"/>
+            <path d="M170 160 L136.6 13.8 A150 150 0 0 1 203.4 13.8 Z" fill="#9cc1a4"/>
+            <path d="M170 160 L203.4 13.8 A150 150 0 0 1 263.5 42.7 Z" fill="#faf5e9"/>
+            <path d="M170 160 L263.5 42.7 A150 150 0 0 1 305.2 94.9 Z" fill="#f6c3a0"/>
+            <path d="M170 160 L305.2 94.9 A150 150 0 0 1 320 160 Z" fill="#e9b824"/>
+            <g stroke="#0d2718" stroke-width="5" fill="none">
+              <path d="M20 160 A150 150 0 0 1 320 160"/>
+              <path d="M170 160 L34.8 94.9 M170 160 L76.5 42.7 M170 160 L136.6 13.8 M170 160 L203.4 13.8 M170 160 L263.5 42.7 M170 160 L305.2 94.9 M20 160 L320 160"/>
+            </g>
+            <circle cx="170" cy="160" r="16" fill="#e9b824" stroke="#0d2718" stroke-width="5"/>
+          </svg>
+        </div>
+        <div class="door-leaves">
+          <div class="door-inside">
+            <svg class="inside-flower" style="left:24%;top:58%" viewBox="0 0 40 40"><g fill="#fdfaf0"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g><circle cx="20" cy="20" r="3.4" fill="#e9b824"/></svg>
+            <svg class="inside-flower" style="right:20%;top:72%;width:18px" viewBox="0 0 40 40"><g fill="#fdfaf0"><ellipse cx="20" cy="11" rx="5" ry="9"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="5" ry="9" transform="rotate(288 20 20)"/></g><circle cx="20" cy="20" r="3.4" fill="#e9b824"/></svg>
+          </div>
+          <div class="leaf-door leaf-l">
+            <div class="pane" style="--c:#e9b824"></div><div class="pane" style="--c:#f6c3a0"></div><div class="pane" style="--c:#e9b824"></div>
+            <div class="pane" style="--c:#9cc1a4"></div><div class="pane" style="--c:#faf5e9"></div><div class="pane" style="--c:#9cc1a4"></div>
+            <div class="pane" style="--c:#f6c3a0"></div><div class="pane" style="--c:#3a7d52"></div><div class="pane" style="--c:#f6c3a0"></div>
+            <div class="pane" style="--c:#9cc1a4"></div><div class="pane" style="--c:#faf5e9"></div><div class="pane" style="--c:#9cc1a4"></div>
+            <div class="pane" style="--c:#e9b824"></div><div class="pane" style="--c:#f6c3a0"></div><div class="pane" style="--c:#e9b824"></div>
+            <span class="door-knob"></span>
+          </div>
+          <div class="leaf-door leaf-r">
+            <div class="pane" style="--c:#e9b824"></div><div class="pane" style="--c:#f6c3a0"></div><div class="pane" style="--c:#e9b824"></div>
+            <div class="pane" style="--c:#9cc1a4"></div><div class="pane" style="--c:#faf5e9"></div><div class="pane" style="--c:#9cc1a4"></div>
+            <div class="pane" style="--c:#f6c3a0"></div><div class="pane" style="--c:#3a7d52"></div><div class="pane" style="--c:#f6c3a0"></div>
+            <div class="pane" style="--c:#9cc1a4"></div><div class="pane" style="--c:#faf5e9"></div><div class="pane" style="--c:#9cc1a4"></div>
+            <div class="pane" style="--c:#e9b824"></div><div class="pane" style="--c:#f6c3a0"></div><div class="pane" style="--c:#e9b824"></div>
+            <span class="door-knob"></span>
+          </div>
+        </div>
+      </div>
+      <div class="door-light"></div>
+    </div>
+
+    <p class="door-caption reveal"
+       data-en="Every room opens straight into the garden."
+       data-th="ทุกห้องเปิดประตูออกสู่สวนได้ทันที">Every room opens straight into the garden.</p>
+
+    <p class="rooms-copy reveal" style="--d:.1s"
+       data-en="Our rooms are simple and kept clean — a double bed, air-conditioning, cool tiled floors, and a stained-glass door of our own colours. Nothing fancy. Just quiet, comfort, and birdsong waiting outside."
+       data-th="ห้องพักของเราเรียบง่ายและดูแลความสะอาดอย่างดี — เตียงคู่ เครื่องปรับอากาศ พื้นกระเบื้องเย็นสบายเท้า และประตูกระจกสีสันแบบของเราเอง ไม่หรูหรา แต่เงียบสงบ สบาย และมีเสียงนกรออยู่นอกประตูค่ะ">
+       Our rooms are simple and kept clean — a double bed, air-conditioning, cool tiled floors, and a stained-glass door of our own colours. Nothing fancy. Just quiet, comfort, and birdsong waiting outside.</p>
+
+    <div class="amenities reveal" style="--d:.2s">
+      <span class="chip" data-en="Double bed" data-th="เตียงคู่">Double bed</span>
+      <span class="chip" data-en="Air-conditioning" data-th="เครื่องปรับอากาศ">Air-conditioning</span>
+      <span class="chip" data-en="Tiled floors" data-th="พื้นกระเบื้อง">Tiled floors</span>
+      <span class="chip" data-en="Door to the garden" data-th="ประตูเปิดสู่สวน">Door to the garden</span>
+    </div>
+
+    <div class="reveal" style="--d:.3s">
+      <span class="price-tag">
+        <span data-en="from" data-th="เริ่มต้น">from</span>
+        <span class="pollen">฿583</span>
+        <span data-en="/ night" data-th="/ คืน">/ night</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · CONTACT — night garden ============ -->
+<section class="contact" id="contact">
+  <span class="ghost" aria-hidden="true">นอน</span>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="fireflies" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal" data-en="04 — Find us" data-th="04 — ติดต่อเรา">04 — Find us</span>
+    <h2 class="reveal-blur" data-en="Come stay slow" data-th="มาพักให้ช้าลง">Come stay slow</h2>
+    <div class="contact-grid">
+      <div class="reveal" style="--d:.1s">
+        <p class="contact-address"
+           data-en="181 Bang Khem, Khao Yoi District, Phetchaburi 76140, Thailand — about one minute off the main road."
+           data-th="181 ต.บางเค็ม อ.เขาย้อย จ.เพชรบุรี 76140 — ห่างจากถนนใหญ่ประมาณหนึ่งนาที">
+           181 Bang Khem, Khao Yoi District, Phetchaburi 76140, Thailand — about one minute off the main road.</p>
+        <p data-en="We are a small family-run place, so a call ahead always helps us welcome you properly."
+           data-th="เราเป็นที่พักเล็ก ๆ ที่ครอบครัวดูแลเอง โทรมาบอกล่วงหน้าสักนิด จะช่วยให้เราต้อนรับคุณได้อย่างเต็มที่ค่ะ">
+           We are a small family-run place, so a call ahead always helps us welcome you properly.</p>
+        <!-- TODO: confirm real check-in / check-out times -->
+        <p class="contact-meta"
+           data-en="Check-in from 14:00 · Check-out by 12:00"
+           data-th="เช็คอินตั้งแต่ 14:00 น. · เช็คเอาท์ภายใน 12:00 น.">
+           Check-in from 14:00 · Check-out by 12:00</p>
+        <p class="contact-meta"><span style="color:var(--pollen)">★</span> 4.4 ·
+          <span data-en="100+ Google reviews" data-th="รีวิวบน Google กว่า 100 รายการ">100+ Google reviews</span></p>
+        <p class="say-it">
+          <span data-en="Say it like a local: " data-th="สำหรับเพื่อนต่างชาติ: ">Say it like a local: </span>
+          <span class="nok">“nok”</span>
+          <span data-en=" — rhymes with “lock”. It means bird." data-th=" ออกเสียงคล้าย “ล็อก” — แปลว่า นก">
+           — rhymes with “lock”. It means bird.</span>
+        </p>
+      </div>
+      <div class="contact-actions reveal" style="--d:.2s">
+        <!-- TODO: replace with the real phone number -->
+        <a class="btn btn-pollen" href="tel:+66000000000"
+           data-en="Tap to call us" data-th="แตะเพื่อโทรหาเรา">Tap to call us</a>
+        <a class="btn btn-light" href="https://maps.app.goo.gl/HiDQRdYoeHQW4bbL6" target="_blank" rel="noopener"
+           data-en="Open in Google Maps" data-th="เปิดใน Google Maps">Open in Google Maps</a>
+        <!-- TODO: replace with the property's direct Booking.com / Agoda URLs -->
+        <a class="btn btn-outline-light" href="https://www.booking.com/" target="_blank" rel="noopener"
+           data-en="Booking.com · from ฿583" data-th="Booking.com · เริ่มต้น ฿583">Booking.com · from ฿583</a>
+        <a class="btn btn-outline-light" href="https://www.agoda.com/" target="_blank" rel="noopener"
+           data-en="Agoda · from ฿638" data-th="Agoda · เริ่มต้น ฿638">Agoda · from ฿638</a>
+      </div>
+    </div>
+  </div>
+  <div class="contact-bamboo" aria-hidden="true">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="xMidYMax slice" fill="currentColor">
+      <g transform="translate(60 20) rotate(3 0 160)"><rect width="12" height="150" rx="6"/><ellipse cx="-26" cy="30" rx="32" ry="7" transform="rotate(-22 -26 30)"/><ellipse cx="36" cy="60" rx="30" ry="7" transform="rotate(16 36 60)"/></g>
+      <g transform="translate(340 40) rotate(-2 0 160)"><rect width="10" height="124" rx="5"/><ellipse cx="30" cy="36" rx="28" ry="6" transform="rotate(18 30 36)"/></g>
+      <g transform="translate(640 14) rotate(2 0 160)"><rect width="13" height="150" rx="6"/><ellipse cx="-28" cy="36" rx="32" ry="7" transform="rotate(-18 -28 36)"/><ellipse cx="38" cy="70" rx="30" ry="7" transform="rotate(14 38 70)"/></g>
+      <g transform="translate(950 36) rotate(-3 0 160)"><rect width="10" height="128" rx="5"/><ellipse cx="-24" cy="44" rx="28" ry="6" transform="rotate(-20 -24 44)"/></g>
+      <g transform="translate(1220 18) rotate(2.5 0 160)"><rect width="12" height="146" rx="6"/><ellipse cx="32" cy="38" rx="30" ry="7" transform="rotate(20 32 38)"/><ellipse cx="-26" cy="76" rx="28" ry="6" transform="rotate(-16 -26 76)"/></g>
+    </svg>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <svg class="foot-bird" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true">
+    <ellipse cx="11" cy="10" rx="9" ry="6"/><circle cx="19" cy="5" r="4"/>
+    <path d="M22.6 4.2 L26 5.2 L22.7 6.4 Z"/>
+    <path d="M7 9 L0 4 L3 10 L-1 14 L7 12 Z"/>
+  </svg>
+  <p class="foot-name">โรงแรมบ้านนก · Nok Home Hotel</p>
+  <p data-en="Bang Khem, Khao Yoi, Phetchaburi — where the birds were here first."
+     data-th="บางเค็ม เขาย้อย เพชรบุรี — ที่ซึ่งนกอยู่มาก่อนเรา">
+     Bang Khem, Khao Yoi, Phetchaburi — where the birds were here first.</p>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var finePointer   = window.matchMedia('(pointer: fine)').matches;
+
+/* ================= language ================= */
+var currentLang = 'en';            // stored in a variable only; English default
+var fading = false;
+var toggle = document.querySelector('.lang-toggle');
+var translatable = document.querySelectorAll('[data-en]');
+
+function applyLang(lang){
+  translatable.forEach(function(el){
+    var t = el.getAttribute('data-' + lang);
+    if (t !== null) el.textContent = t;
+  });
+  document.documentElement.lang = lang;
+}
+function setLang(lang){
+  if (lang === currentLang || fading) return;
+  currentLang = lang;
+  toggle.setAttribute('data-active', lang);
+  if (reducedMotion){ applyLang(lang); return; }
+  fading = true;
+  document.body.classList.add('lang-fading');           // fade out 150ms
+  setTimeout(function(){
+    applyLang(lang);                                    // swap
+    document.body.classList.remove('lang-fading');      // fade in 150ms
+    setTimeout(function(){ fading = false; }, 160);
+  }, 160);
+}
+toggle.addEventListener('click', function(e){
+  var b = e.target.closest('.lang-btn');
+  if (b) setLang(b.getAttribute('data-lang'));
+});
+
+/* ================= plumeria petals ================= */
+var PETAL_SVG =
+  '<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">' +
+  '<g fill="#fdfaf0">' +
+  [0,72,144,216,288].map(function(a){
+    return '<ellipse cx="20" cy="10.5" rx="5.8" ry="9.8" transform="rotate(' + (a - 10) + ' 20 20)"/>';
+  }).join('') +
+  '</g><circle cx="20" cy="20" r="4.4" fill="#eec43e"/></svg>';
+
+if (!reducedMotion){
+  var box = document.querySelector('.petals');
+  var n = window.innerWidth < 640 ? 9 : 16;
+  for (var i = 0; i < n; i++){
+    var p = document.createElement('div');
+    p.className = 'petal';
+    p.innerHTML = PETAL_SVG;
+    var s = 13 + Math.random() * 22;
+    p.style.left = (Math.random() * 100) + '%';
+    p.style.width = p.style.height = s + 'px';
+    p.firstChild.style.width = p.firstChild.style.height = s + 'px';
+    p.style.setProperty('--dur',  (10 + Math.random() * 9) + 's');
+    p.style.setProperty('--delay',(-Math.random() * 19) + 's');   // mid-air at load
+    p.style.setProperty('--spin', (3 + Math.random() * 4.5) + 's');
+    p.style.setProperty('--drift',(Math.random() * 180 - 90) + 'px');
+    p.style.opacity = 0.6 + Math.random() * 0.4;
+    box.appendChild(p);
+  }
+}
+
+/* ================= fireflies (contact) ================= */
+(function(){
+  var holder = document.querySelector('.fireflies');
+  var n = window.innerWidth < 640 ? 8 : 14;
+  for (var i = 0; i < n; i++){
+    var f = document.createElement('span');
+    f.className = 'firefly';
+    f.style.left = (4 + Math.random() * 92) + '%';
+    f.style.top  = (8 + Math.random() * 70) + '%';
+    f.style.setProperty('--ffd',  (7 + Math.random() * 8) + 's');
+    f.style.setProperty('--ffg',  (2 + Math.random() * 2.5) + 's');
+    f.style.setProperty('--ffdel',(-Math.random() * 8) + 's');
+    f.style.setProperty('--ffx',  (Math.random() * 90 - 45) + 'px');
+    f.style.setProperty('--ffy',  (Math.random() * 70 - 35) + 'px');
+    if (reducedMotion) f.style.opacity = .6;
+    holder.appendChild(f);
+  }
+})();
+
+/* ============ one scroll loop: parallax + progress bird ============ */
+var hero = document.querySelector('.hero');
+var layers = document.querySelectorAll('[data-parallax]');
+var pBird = document.querySelector('.progress-bird');
+var pWire = document.querySelector('.progress-wire');
+var heroH = hero.offsetHeight, ticking = false;
+
+function onScroll(){
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){
+    var sy = window.scrollY;
+    if (!reducedMotion && sy < heroH){
+      layers.forEach(function(l){
+        l.style.transform = 'translateY(' + (sy * parseFloat(l.getAttribute('data-parallax'))) + 'px)';
+      });
+    }
+    if (pBird && pWire){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var pr = max > 0 ? sy / max : 0;
+      pBird.style.transform = 'translate(-50%,' + (pr * (pWire.clientHeight - 20)) + 'px)';
+    }
+    ticking = false;
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+window.addEventListener('resize', function(){ heroH = hero.offsetHeight; }, {passive:true});
+onScroll();
+
+/* ================= reveals ================= */
+var revealEls = document.querySelectorAll('.reveal,.reveal-blur');
+if (!reducedMotion && 'IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold: .12, rootMargin: '0px 0px -50px 0px'});
+  revealEls.forEach(function(el){ io.observe(el); });
+} else {
+  revealEls.forEach(function(el){ el.classList.add('in'); });
+}
+
+/* ================= stained-glass door opens ================= */
+var door = document.getElementById('door');
+if ('IntersectionObserver' in window){
+  var doorIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){
+        setTimeout(function(){ door.classList.add('open'); }, reducedMotion ? 0 : 500);
+        doorIO.unobserve(door);
+      }
+    });
+  }, {threshold: .45});
+  doorIO.observe(door);
+} else {
+  door.classList.add('open');
+}
+
+/* ================= count-up stats ================= */
+function countUp(el){
+  var target = parseFloat(el.getAttribute('data-count'));
+  var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+  if (reducedMotion){ el.textContent = target.toFixed(dec); return; }
+  var t0 = null, DUR = 1400;
+  function step(ts){
+    if (!t0) t0 = ts;
+    var k = Math.min((ts - t0) / DUR, 1);
+    k = 1 - Math.pow(1 - k, 3);                       // ease-out cubic
+    el.textContent = (target * k).toFixed(dec);
+    if (k < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+var stats = document.getElementById('stats');
+if ('IntersectionObserver' in window){
+  var statIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){
+        stats.querySelectorAll('[data-count]').forEach(countUp);
+        statIO.unobserve(stats);
+      }
+    });
+  }, {threshold: .4});
+  statIO.observe(stats);
+} else {
+  stats.querySelectorAll('[data-count]').forEach(countUp);
+}
+
+/* ================= 3D tilt + glare (fine pointers) ================= */
+if (!reducedMotion && finePointer){
+  document.querySelectorAll('[data-tilt]').forEach(function(card){
+    var MAX = 8;
+    card.addEventListener('pointermove', function(e){
+      var r = card.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width  - .5;
+      var py = (e.clientY - r.top)  / r.height - .5;
+      card.style.transition = 'none';
+      card.style.transform =
+        'perspective(800px) rotateX(' + (-py * MAX).toFixed(2) + 'deg)' +
+        ' rotateY(' + (px * MAX).toFixed(2) + 'deg)';
+      card.style.setProperty('--gx', ((px + .5) * 100) + '%');
+      card.style.setProperty('--gy', ((py + .5) * 100) + '%');
+    });
+    card.addEventListener('pointerleave', function(){
+      card.style.transition = 'transform .5s cubic-bezier(.2,.7,.2,1)';
+      card.style.transform = '';
+    });
+  });
+
+  /* magnetic buttons */
+  document.querySelectorAll('.btn').forEach(function(btn){
+    btn.addEventListener('pointermove', function(e){
+      var r = btn.getBoundingClientRect();
+      var dx = (e.clientX - r.left - r.width / 2)  / r.width;
+      var dy = (e.clientY - r.top  - r.height / 2) / r.height;
+      btn.style.transform = 'translate(' + (dx * 7) + 'px,' + (dy * 7) + 'px)';
+    });
+    btn.addEventListener('pointerleave', function(){ btn.style.transform = ''; });
+  });
+}
+})();
+</script>
+</body>
+</html>
